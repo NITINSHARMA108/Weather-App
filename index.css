@@ -15,20 +15,21 @@ body{
     flex-direction:column;
     justify-content:space-around;
     align-items:center;
-
+    box-sizing: content-box;
     margin-top:20px;
     background-size: cover;
     color:white;
     font-size:2em;
     font-weight: bolder;
+    padding:10px;
 }
 input{
     height:40px;
-    width:100%;
+    width:80%;
     padding:0 10px;
     background-image: url('https://ding-09.github.io/weather-app/night.jpg');
     border-radius:10px;
-    border:1px solid black; 
+    border:1px solid white; 
     color:white;
 }
 

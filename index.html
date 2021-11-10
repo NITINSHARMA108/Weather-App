@@ -15,7 +15,7 @@
     <div class="container">
         
         <form>
-            <input type="text" placeholder="enter city name" id="cityname">
+            <input type="text" placeholder="enter city name" id="cityname" minlength="3">
             <button type="button" id="searchbutton">Search</button>
 
         </form>
@@ -23,7 +23,9 @@
 
         </div>
         <div class="result" style="text-align:center;">
-            <span id="number">0</span><span id="deg">&deg;</span><span id="unit">F</span>
+            <span id="number">-</span><span id="deg">&deg;</span><span id="unit">F</span>
+            <p id="city"></p>
+            <p id="country"></p>
         </div>
         <div class="buttons">
             <button id="tofahrenheit">&deg;F</button>
