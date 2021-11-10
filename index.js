@@ -8,9 +8,10 @@ async function callOpenWeatherApi(city){
         /*const giphy=await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=AynZFA3KdzNOTVPKa0s5DbI2FCBE66vW&s=${data.weather[0].main} season`);
         const giphyURL=await giphy.json();*/
         const l=getrgb();
+        let temperature=(((data.main.temp-273.15)*9/5)+32).toFixed(2);
         document.querySelector('.container').style.backgroundColor=`rgb(${l[0]},${l[1]},${l[2]})`;
         document.querySelector('.loader').style.display='none';
-        return [data.main.temp,data.name,data.sys.country];
+        return [temperature,data.name,data.sys.country];
     }
     catch(err){
         console.log(err);
@@ -88,7 +89,7 @@ document.getElementById('tofahrenheit').addEventListener('click',function(){
             document.getElementById('number').innerHTML=temp;
         }
         else{
-            document.getElementById('number').innerHTML=`${(Number(temp)+273.15).toFixed(2)}`;
+            document.getElementById('number').innerHTML=`${((Number(temp)*9/5)+32).toFixed(2)}`;
             document.getElementById('unit').innerHTML='F';
         }
         
@@ -115,7 +116,7 @@ document.getElementById('tocelcius').addEventListener('click',function(){
         document.getElementById('number').innerHTML=temp;
     }
     else{
-        document.getElementById('number').innerHTML=`${(Number(temp)-273.15).toFixed(2)}`;
+        document.getElementById('number').innerHTML=`${((Number(temp)-32)*5/9).toFixed(2)}`;
         document.getElementById('unit').innerHTML='C';
     }
     }
